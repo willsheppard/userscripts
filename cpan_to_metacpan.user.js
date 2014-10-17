@@ -60,3 +60,5 @@
 // The following are known not to work, perhaps some could be achieved with the metacpan API and/or https://github.com/yanick/metacpan.js :
 // - http://search.cpan.org/~chisel/Catalyst-Plugin-ErrorCatcher/ -> https://metacpan.org/module/Catalyst::Plugin::ErrorCatcher
 // - http://search.cpan.org/~chisel/Catalyst-Plugin-ErrorCatcher/lib/Catalyst/Plugin/ErrorCatcher/Email.pm -> https://metacpan.org/module/Catalyst::Plugin::ErrorCatcher::Email
+// 
+// However, I think this is unnecessarily complex. There are existing URL rewriters on the metacpan domain, of which this could make better use.
