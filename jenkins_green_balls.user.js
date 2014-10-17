@@ -6,12 +6,6 @@
 
 // ==/UserScript==
 
-Example script to change an image.
-
-@include domain given is internal to my company.
-
-I couldn't work out how to use a local image, so it uses a remote one.
-
 /*
 
 DESCRIPTION:
@@ -20,6 +14,10 @@ Blue balls are just wrong. Blue doesn't mean "okay" (see link below),
 only green means that. If your Jenkins administrator can't or won't
 change the blue balls back to green using the published plugin (see link below)
 then you can use this script.
+
+This is a toy project I used to have fun and learn JQuery.
+
+The @include domain given is internal to my company.
 
 BUGS:
 
