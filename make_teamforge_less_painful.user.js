@@ -11,22 +11,24 @@
 
 /*
 TODOs:
-	// How the hell do I copy the button next to the comment area?
-    // None of these work...
+    * Hide "Users Monitoring", "Stop Monitoring"
+       difficult as they have no named container
+     
+    * How the hell do I copy the button next to the comment area?
+      None of these work...
     //$('textarea#comment').append('#viewArtifactForm_SaveAndView');
-	//$('#viewArtifactForm_SaveAndView').appendTo( 'textarea#comment' );
-	//$('#viewArtifactForm_SaveAndView').appendTo( $('textarea#comment') );
-	//$('#viewArtifactForm_SaveAndView').clone().appendTo('textarea#comment');
+    //$('#viewArtifactForm_SaveAndView').appendTo( 'textarea#comment' );
+    //$('#viewArtifactForm_SaveAndView').appendTo( $('textarea#comment') );
+    //$('#viewArtifactForm_SaveAndView').clone().appendTo('textarea#comment');
     $('textarea#comment').css({"border":"3px solid red"}); // works
 
     * Refactor the logic so there's less duplication
 */
 
 // Hide unwanted buttons
-var button_texts = [ "Update", "Cancel", "Users Monitoring", "Stop Monitoring" ]; // View/edit page
+var button_texts = [ "Update", "Cancel" ]; // View/edit page
 button_texts.forEach(function(button_text) {
-//    $('#viewArtifactForm .Button a').filter(function() {
-    $('.Button a').filter(function() {
+    $('#viewArtifactForm .Button a').filter(function() {
         return $(this).text() == button_text;
     }).closest('.Button').hide();
     console.log("Hiding button with text '"+button_text+"'");
