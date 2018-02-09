@@ -1,0 +1,52 @@
+/*
+  CSS hack to prevent ReviewBoard putting red boxes around every character in Perl Template Toolkit files
+  Credit goes to Andy Cunningham
+
+  Somehow Firefox manages to apply this even though the content is question is loaded via AJAX long after
+  the "dom ready" event. The AJAX loading makes it problematic to port this to Chrome as a userscript.
+
+  You need to put this in 'userChrome.css' file in your Firefox profile folder, in a directory called 'chrome'
+  (create it if it doesn't exist)
+
+  Help:
+  http://kb.mozillazine.org/index.php?title=UserChrome.css
+  https://www.userchrome.org/how-create-userchrome-css.html
+  https://support.mozilla.org/en-US/questions/1151436
+*/
+
+	/* Firefox Custom CSS */
+
+	/* Reviewboard CSS */
+	@-moz-document domain(reviewboard.nap) {
+	    body {
+	        font-family:'Comic Sans MS', cursive !important;
+	    }
+	    .err {
+	        border: none !important;
+	    }
+	    pre {
+	        font-family: monaco !important;
+	    }
+	}
+
+	@-moz-document domain(stash.nap) {
+	    /* Code body for stash */
+	    .CodeMirror {
+	        font-family: monaco !important;
+	    }
+	    .content-view .CodeMirror pre {
+	        font-family: monaco !important;
+	    }
+	    .content-view .CodeMirror {
+	        font-family: monaco !important;
+	    }
+	    /* line numbers */
+	    .diff-view.text-view .line-number, .diff-view.text-view .line-number-marker {
+	        font-family: monaco !important;
+	    }
+	}
+
+	/* Prod Conrad */
+	@-moz-document domain(conrad.net-a-porter.com) {
+
+	}
