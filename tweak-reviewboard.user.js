@@ -46,15 +46,15 @@ $(window).bind("load", function() {
 //});
 
 /*
-	    body {
-	        font-family:'Comic Sans MS', cursive !important;
-	    }
-	    .err {
-	        border: none !important;
-	    }
-	    pre {
-	        font-family: monaco !important;
-	    }
+        body {
+            font-family:'Comic Sans MS', cursive !important;
+        }
+        .err {
+            border: none !important;
+        }
+        pre {
+            font-family: monaco !important;
+        }
 */
 
 // Add a button to hide the Description, Testing Done, Information, Reviewers, etc.
@@ -79,7 +79,7 @@ $boilerplate_button.click(function() {
 //        var foo = desc_visible ? $(el).hide() : $(el).show();
 //        desc_visible = desc_visible ? false : true;
         $(el).hide();
-        $boilerplate_button.value = 'reload to restore';
+        $boilerplate_button.prop('value', 'restore boilerplate');
         $boilerplate_button.click(function() {
             location.reload();
         });
