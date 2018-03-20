@@ -70,8 +70,10 @@ $boilerplate_button.click(function() {
     [
         '#headerbar',
         '#navbar-container',
+        '#review_request_banners',
         '#review_request_details',
         '#review_request_main',
+        '#review_request_extra',
         '#diff_revision_label',
         '#diff_revision_selector',
         '.actions-container'
