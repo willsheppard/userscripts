@@ -3,7 +3,7 @@
 // @namespace    http://compufer.com/
 // @version      0.1
 // @description  Misc improvements
-// @author       Will Sheppard (c) 2019
+// @author       You
 // @match        https://bitbucket.org/*
 // @require      http://code.jquery.com/jquery-2.1.4.min.js
 // @grant        none
@@ -38,5 +38,15 @@
         });
     }
     setTimeout( doSomethingAfterAWhile, aWhile );
+
+    // Problem: Some PRs have diffs with a lot of lines that were added and deleted, all interleaved
+    // making it very difficult to focus on what was added.
+    // Display a button that removes the "deleted" lines, leaving visible only the code you care about.
+    var r = $('<input type="button" value="hide deleted lines"/>');
+    r.css({'position': 'fixed', 'top': '65px', 'left': '20px', 'z-index': '99999'});
+    r.on('click',function(){
+        $('.deletion').hide();
+    });
+    $("body").append(r);
 
 })();
