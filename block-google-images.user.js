@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Block google images
 // @namespace    http://compufer.com/userscripts
-// @version      0.1
-// @description  Replaces all the images on Google Image search with a warning. Are you prone to procrastination? Do you struggle with impulse control? Do you avoid work by browsing Google Images? Stop wasting time! This script acts like a nanny to slap your wrist and remind you to focus on your work. Recommended to use on Firefox for Android (via GreaseMonkey addon), and via TamperMonkey in Chrome for desktop.
+// @version      0.2
+// @description  Redirects browser away from Google Image search, and displays a warning. Are you prone to procrastination? Do you struggle with impulse control? Do you avoid work by browsing Google Images? Stop wasting time! This script acts like a nanny to slap your wrist and remind you to focus on your work.
 // @author       Will Sheppard
 // @match        https://www.google.com/search*tbm=isch*
 // @require      http://code.jquery.com/jquery-2.1.4.min.js
@@ -20,4 +20,10 @@
         overflow: 'hidden',
         height: '100%'
     });
+
+    // Known bug: Clicking on the image still loads the original.
+    // All other links also work, which is undesirable.
+
+    // Workaround: Redirect the browser completely away from the page
+    window.location.href = "http://compufer.com/images/stop.jpeg";
 })();
