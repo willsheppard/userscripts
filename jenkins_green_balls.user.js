@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name           JenkinsGreenBalls
-// @namespace      http://example.com
+// @namespace      http://compufer.com/jenkins/balls
 // @description    Change Jenkins blue balls to green balls
 // @include        *http://build01.wtf.nap*
 
@@ -58,39 +58,39 @@ for (var i=0;i<allImgs.snapshotLength;i++) {
         //thisImg.src = 'https://issues.jenkins-ci.org/secure/attachmentzip/unzip/137947/19891%5B19%5D/48x48/green.gif';
 
         // This green ball is even greener than the standard one, which wasn't green enough for me:
-        thisImg.src = 'http://www.example.com/images/jenkins/32x32/greener.gif';
+        thisImg.src = 'http://www.compufer.com/images/jenkins/32x32/greener.gif';
     }
     else if (src.match('32x32/blue_anime.gif') != null) {
-        thisImg.src = 'http://www.example.com/images/jenkins/32x32/green_anime.gif';
+        thisImg.src = 'http://www.compufer.com/images/jenkins/32x32/green_anime.gif';
     }
 
     // 32x32 red - improve the sprite
     else if (src.match('32x32/red.png') != null) {
-        thisImg.src = 'http://www.example.com/images/jenkins/32x32/redder.png';
+        thisImg.src = 'http://www.compufer.com/images/jenkins/32x32/redder.png';
     }
 
     // 48x48 blue -> green
     else if (src.match('48x48/blue_anime.gif') != null) {
-        thisImg.src = 'http://www.example.com/images/jenkins/48x48/green_anime.gif';
+        thisImg.src = 'http://www.compufer.com/images/jenkins/48x48/green_anime.gif';
     }
     else if (src.match('48x48/blue.gif') != null) {
-        thisImg.src = 'http://www.example.com/images/jenkins/48x48/green.gif';
+        thisImg.src = 'http://www.compufer.com/images/jenkins/48x48/green.gif';
     }
 
     // 24x24 blue -> green
     else if (src.match('24x24/blue_anime.gif') != null) {
-        thisImg.src = 'http://www.example.com/images/jenkins/24x24/green_anime.gif';
+        thisImg.src = 'http://www.compufer.com/images/jenkins/24x24/green_anime.gif';
     }
     else if (src.match('24x24/blue.gif') != null) {
-        thisImg.src = 'http://www.example.com/images/jenkins/24x24/green.gif';
+        thisImg.src = 'http://www.compufer.com/images/jenkins/24x24/green.gif';
     }
 
     // 16x16 blue -> green
     else if (src.match('16x16/blue_anime.gif') != null) {
-        thisImg.src = 'http://www.example.com/images/jenkins/16x16/green_anime.gif';
+        thisImg.src = 'http://www.compufer.com/images/jenkins/16x16/green_anime.gif';
     }
     else if (src.match('16x16/blue.png') != null) {
         // for some reason this was a .png
-        thisImg.src = 'http://www.example.com/images/jenkins/16x16/green.gif';
+        thisImg.src = 'http://www.compufer.com/images/jenkins/16x16/green.gif';
     }
 }
