@@ -10,26 +10,20 @@
 // @grant        none
 // ==/UserScript==
 
-var debug = 1;
+/*
+   NOTES:
+
+ * The list of albums is not visible when the page loads, so the modifications cannot be triggered by the page onLoad event.
+   That is why there is a button to trigger the modifications. Suggestions welcome for firing this automatically when the album list appears.
+
+ * Furthermore, not all the albums are displayed in the list by default. The user must scroll to the bottom for more to be loaded. To do.
+
+ */
+
+var debug = 0;
 
 (function() {
     'use strict';
-
-    /*** ATTEMPT 1, March 2019 ***/
-    // TODO: Add floating button, when you click it, a new control is added to select album with auto-completion.
-    // The reason for the button: The album list may not exist when the page is loaded.
-
-    /*** ATTEMPT 2, October 2019 ***/
-    // TODO: Start to hack the page to allow moving albums around a hierarchy
-    // TODO: Systematically identify each component
-
-    // Identify "Add to" text
-    // DOESNT WORK
-    // <div jsname="YASyvd" class="PNenzf" role="heading" aria-level="1" id="KPdYAe8">Add to</div>
-//    var add_to = $('div[role="heading"][text()="Add to"]');
-//    var add_to = $('div:contains("Add to")');
-//    add_to.css({ 'border': '1px dashed red' });
-
 
     // Add "start" button
     var r = $('<input type="button" value="start Jojo-Photo user script"/>');
@@ -38,9 +32,18 @@ var debug = 1;
 
         // Identify "Album list" attribute
         var album_list = $('ul[aria-label="Album list"]');
-        var album_list_div  = album_list.parent(); //.css( 'border', '1px dashed red' );
-        var album_list_span = album_list.parent().parent(); //.css( 'border', '1px dashed red' );
+        var album_list_div  = album_list.parent();
+        var album_list_span = album_list.parent().parent();
         var top_div         = album_list.parent().parent().parent(); //.css( 'border', '1px dashed red' );
+
+        // Scroll to the bottom so that all the albums are loaded
+        // DOESNT WORK
+//        var high = $(document).height();
+        var high = 50000;
+        album_list.scrollTop(high);
+        album_list_div.scrollTop(high);
+        album_list_span.scrollTop(high);
+        top_div.scrollTop(high);
 
         // Make all the wrappers wider. Perhaps we don't need to change all of them, but this does the job.
         var wrappers = [album_list, album_list_div, album_list_span, top_div];
@@ -54,67 +57,26 @@ var debug = 1;
         // TODO: Make this relative to the screen/container/whatever
         top_div.css({ 'left': '-300px'});
 
-        /*
-        [album_list, album_list_div, album_list_span, top_div].each(function( index ) {
-            console.log( index + ": " + $( this ).text() );
-            index.css({'width':'100vw','max-width':'100vw'});
-        });
-        */
-
         // identify album list
-//        var container = $('div[jscontroller][jsaction][jsshadow][ve-stop-target-search][jsowner]');
         var container = top_div;
-        debug && $(container).css({ 'border': '1px dashed red' }); // debug
+        debug && container.css({ 'border': '1px dashed red' }); // debug
 
         // set up album list as a Nestable list
-        $(container).wrap( "<div class='dd'></div>" );
+        container.wrap( "<div class='dd'></div>" );
         container.addClass("jojoContainer");
-        $(container).find('ul').addClass("dd-list");
+        container.find('ul').addClass("dd-list");
 
         // Make wider so entire name can be read
-        $(container).find('li').find('div').css({'width':'85vw','max-width':'85vw'});
+        container.find('li').find('div').css({'width':'85vw','max-width':'85vw'});
 
         // set up list items as Nestable items
-        debug && $(container).find('li').find('div').css({ 'border': '1px dashed blue' }); // debug
-        $(container).find('li').addClass("dd-item");
-        $(container).find('li').prepend( "<div class='dd-handle'>Drag</div>" ); // Click and drag the 'X' to change order of the items
+        debug && container.find('li').find('div').css({ 'border': '1px dashed blue' }); // debug
+        container.find('li').addClass("dd-item");
+        container.find('li').prepend( "<div class='dd-handle'>Drag</div>" ); // Click and drag the 'X' to change order of the items
 
         // Activate the Nestable list
-        $('.dd').nestable({ /* config options */ }); // TODO: Prevent dd-item turning white when dragging
-        $('.dd').nestable({ scroll: 'true' }); // not working?
-
-/*
-        // identify all the components, to make them wider
-        var content = $(container).find('div').filter( function() {
-            return $(this).find('ul[aria-label="Album list"]')
-        });
-        debug && $(content).css({ 'border': '5px solid green' }); // debug
-*/
-
-        /*
-        // TODO: Make albums selector dialog larger
-        $('.jojoContainer').css({
-            'width': '100vw', // 100vw = 100% of viewport width
-            'max-width': '100vw',
-        });
-        */
-
-        // <div class="Rj0aoe eejsDc" tabindex="-1" autofocus="" jscontroller="jj7Q3d" jsmodel="XbSnZe" jsaction="rcuQ6b:npT2md;JIbuQc:Bu1dJd">
-        // span > div > ul
-        //         |
-        //         \__ width: '90vw', 'max-width': '90vw'
-
-        // Title div "Magazines, 2019"
-        // 'max-width': '90vw'
-
-        /* HTML structure:
-             // header
-             $(container).find('[aria-label="Close"]')
-             // content
-             $(container).find('div').filter( function() {
-                 return $(this).find('ul[aria-label="Album list"]')
-             });
-        */
+        $('.dd').nestable({ /* config options */ });
+        $('.dd').nestable({ scroll: 'true' });
 
 /*
 <div class="jojoContainer" jscontroller jsaction keydown clickonly mousedown touchstart focus blur touchmove jsshadow ve-stop-target-search jslog
