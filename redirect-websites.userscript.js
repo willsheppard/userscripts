@@ -12,6 +12,7 @@
     var current_uri=window.location.href;
     console.log(current_uri);
 
+    // I don't want to be distracted by random posts, I want to focus on what's important to me
     if (current_uri.match(/www.reddit.com\/$/)) {
         window.location.href = "https://www.reddit.com/message/inbox";
     }
