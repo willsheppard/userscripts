@@ -12,7 +12,8 @@ CHANGELOG:
 
 - 2014-10-17: Create script in response to green balls turning blue (yuk)
 - 2019-10-28: Point to where the images are hosted, so it works out-of-the-box
-- 2022-05-23: Make it work on latest Jenkins, update docs
+- 2022-05-23: Update docs, realise it doesn't work on the latest Jenkins
+              because the balls are now implemented in a totally different way
 
 DESCRIPTION:
 
@@ -21,7 +22,7 @@ only green means that. If your Jenkins administrator can't or won't
 change the blue balls back to green using the published plugin (see link below)
 then you can use this script
 
-It's now 2022 and the latest Jenkins balls are even worse than the blue ones were.
+It's now 2022 and the latest Jenkins balls are even worse than the blue ones.
 They're now harder to see because they're more spindly. We like our balls to be
 a bold and solid colour around here.
 
@@ -35,6 +36,7 @@ upload them to your own server, and change the URLs to point there.
 
 TODO:
 
+* Make it work with the latest svg-sprite-action-symbol.svg system
 * Include the images in a Chrome extension, and load from the local machine
 * Make the big if/else statement a bit cleverer
 
