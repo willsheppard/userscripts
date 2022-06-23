@@ -1,23 +1,31 @@
 // ==UserScript==
 // @name           JenkinsGreenBalls
 // @namespace      http://compufer.com/jenkins/balls
-// @description    Change Jenkins blue balls to green balls
-// @include        *http://build01.wtf.nap*
+// @description    Green is the only true colour for Jenkins balls!
+// @include        *insert-your-jenkins-uri-here*
 
 // ==/UserScript==
 
 /*
 
+CHANGELOG:
+
+- 2014-10-17: Create script in response to green balls turning blue (yuk)
+- 2019-10-28: Point to where the images are hosted, so it works out-of-the-box
+- 2022-05-23: Make it work on latest Jenkins, update docs
+
 DESCRIPTION:
 
-Blue balls are just wrong. Blue doesn't mean "okay" (see link below),
+It's 2014. Blue balls are just wrong. Blue doesn't mean "okay" (see link below),
 only green means that. If your Jenkins administrator can't or won't
 change the blue balls back to green using the published plugin (see link below)
-then you can use this script.
+then you can use this script
+
+It's now 2022 and the latest Jenkins balls are even worse than the blue ones were.
+They're now harder to see because they're more spindly. We like our balls to be
+a bold and solid colour around here.
 
 This is a toy project I used to have fun and learn JQuery.
-
-The @include domain given is internal to my company.
 
 BUGS:
 
