@@ -12,6 +12,7 @@
 /* HOW TO INSTALL THIS SCRIPT
  *
  * For Chrome, Safari, Firefox and other browsers, install the Tampermonkey browser extension: https://www.tampermonkey.net/
+ *     ...and then reload this page
  *
  * Chrome web store link: https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo
  *
