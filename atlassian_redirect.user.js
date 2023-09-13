@@ -6,7 +6,6 @@
 // @run-at      document-end
 // @match       *://*.atlassian.com/*
 // @match       *://*.atlassian.net/*
-// @require     https://code.jquery.com/jquery-3.6.1.slim.min.js
 // @author      Ludo Tolhurst-Cleaver, Will Sheppard, Dan Banks
 // ==/UserScript==
 
