@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        AtlassianRedirect
 // @namespace   atlassian.com
-// @version     0.08
+// @version     0.09
 // @grant       none
 // @run-at      document-end
 // @match       *://*.atlassian.com/*
