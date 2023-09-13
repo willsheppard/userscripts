@@ -9,7 +9,16 @@
 // @author      Ludo Tolhurst-Cleaver, Will Sheppard, Dan Banks
 // ==/UserScript==
 
-/*
+/* HOW TO INSTALL THIS SCRIPT
+ *
+ * For Chrome, Safari, Firefox and other browsers, install the Tampermonkey browser extension: https://www.tampermonkey.net/
+ *
+ * Chrome web store link: https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo
+ *
+ */
+
+/* WHAT THIS SCRIPT DOES
+ *
  * 1. Confluence
  *     - Redirect from a Broadbean wiki page:    https://broadbean.atlassian.net/wiki/spaces/ATS/pages/2975662172/iCIMS+integration#Job-Model
  *     - To a Veritone wiki search results page: https://veritone.atlassian.net/wiki/search?text=%22iCIMS%20integration%22&title=true&spaces=ATS
@@ -21,7 +30,7 @@
  *     Perfect.
  */
 
-var debug = 1;
+var debug = 0;
 
 var sourceUrlCheck = 'broadbean.atlassian.net';
 var targetUrlBase  =  'veritone.atlassian.net';
