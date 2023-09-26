@@ -86,7 +86,7 @@ const checkButtonLoad = () => {
     if (checkLoad()) {
       //  hackerman
         clearInterval(interval_check)
-      setTimeout(() => init_screen_main(),500)
+      setTimeout(() => init_screen_main(),1500)
       
     }
   }, 100)
