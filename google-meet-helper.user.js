@@ -3,8 +3,8 @@
 // @namespace   Violentmonkey Scripts
 // @match       https://meet.google.com/*
 // @grant       none
-// @version     1.2.6
-// @author      Vanshaj Girotra
+// @version     1.3.01
+// @author      Vanshaj Girotra, Will Sheppard
 // @description  disable video, Auto mute and auto join in that order. Also switches account (defaults to primary)
 // @run-at       document-idle
 // ==/UserScript==
