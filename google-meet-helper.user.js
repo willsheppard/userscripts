@@ -52,17 +52,26 @@ const init_screen_main = () => {
     else if (aria_label && ~aria_label.toLowerCase().indexOf('+ e'))
       button_map.video = button;
   })
-  
-  
-  if (DISABLE_VIDEO)
-    button_map.video.click()
 
-  if (DISABLE_AUDIO)
-    button_map.audio.click()
+  if (! button_map.video) { console.error("Failed to detect 'disable video' button"); }
+  if (! button_map.audio) { console.error("Failed to detect 'disable audio' button"); }
+  if (! button_map.join)  { console.error("Failed to detect 'Join now' button"); }
 
-  if (AUTO_JOIN && button_map.audio && button_map.video)   // join iff audio and video buttons have been clicked
-    button_map.join && button_map.join.click();
-  
+  if (DISABLE_VIDEO) {
+    console.debug("DISABLE_VIDEO");
+    button_map.video.click();
+  }
+
+  if (DISABLE_AUDIO) {
+    console.debug("DISABLE_AUDIO");
+    button_map.audio.click();
+  }
+
+  // join if audio and video buttons have been clicked
+  if (AUTO_JOIN && button_map.audio && button_map.video) {
+    button_map.join && console.debug("AUTO_JOIN") && button_map.join.click();
+  }
+
 };
 
 
@@ -86,8 +95,8 @@ const checkButtonLoad = () => {
     if (checkLoad()) {
       //  hackerman
         clearInterval(interval_check)
-      setTimeout(() => init_screen_main(),1500)
-      
+      setTimeout(() => init_screen_main(),500)
+
     }
   }, 100)
 }
