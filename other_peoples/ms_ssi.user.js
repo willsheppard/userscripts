@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name         Stay signed in to MS
 // @description  Automatically click "yes" on the Microsoft "stay signed in" page that keeps appearing.
-// @downloadURL  https://gist.github.com/emlyn/2f0c9702bd83fe7d232ed58626c90ac7/raw/ms_ssi.js
-// @updateURL    https://gist.github.com/emlyn/2f0c9702bd83fe7d232ed58626c90ac7/raw/ms_ssi.js
-// @namespace    https://gist.github.com/emlyn/
-// @version      0.2
-// @author       Emlyn Corrin
-// @match        https://login.microsoftonline.com/login.srf
+// @downloadURL  https://github.com/willsheppard/userscripts/raw/master/other_peoples/ms_ssi.user.js
+// @updateURL    https://github.com/willsheppard/userscripts/raw/master/other_peoples/ms_ssi.user.js
+// @namespace    https://github.com/willsheppard
+// @version      0.21
+// @author       Emlyn Corrin, Will Sheppard
+// @match        https://login.microsoftonline.com/login.srf*
 // @icon         https://c.s-microsoft.com/favicon.ico?v2
 // @grant        none
 // @noframes
